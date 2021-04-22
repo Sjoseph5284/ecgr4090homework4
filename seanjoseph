@@ -1,0 +1,215 @@
+%%problem 1
+
+%%part a
+
+from  import train_test_image
+
+
+x1 = [0,1,1,1]
+y0 = [0,1,1,0]
+
+x2=[1,1,0,1]
+
+
+plt.scatter(x1,y0, label='x1',color='r')
+plt.scatter(x2,y0,label='x2',color='g')
+plt.xlabel('Input')
+plt.ylabel('Output')
+plt.title('Scatter Plot')
+plt.legend()
+plt.show()
+#training neural network
+X = np.array([[0,0,1,1],[0,1,0,1]])
+y = np.array([0,1,1,0])
+X = pd.DataFrame(X)
+X = X.T
+y = pd.DataFrame(y)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.5, random_state = 0)
+
+
+
+#First hidden layer
+classifier.add(Dense(units = 2,  'uniform', activation = 'relu', input_dim = 2))
+
+
+
+sgd = optimizers.SGD(learning_rate = 0.1)
+classifier.compile(optimizer = sgd, loss = 'binary_crossentropy', metrics = ['accuracy'])
+  
+# Training the classifier
+history = classifier.fit(X_train, y_train, batch_size = 6, epochs = 200)
+
+# Plotting the training loss
+
+plt.plot(history.history['loss'], label='train')
+plt.legend()
+plt.show()
+
+# Evaluating the model in terms of the accuracy
+
+_, train_acc = classifier.evaluate(X_train, y_train)
+_, test_acc = classifier.evaluate(X_test, y_test)
+print('Train: %.3f, Test: %.3f' % (train_acc, test_acc))
+
+
+%%part b
+
+#First hidden layer
+classifier.add(Dense(units = 6, kernel_initializer = 'uniform', activation = 'relu', input_dim = 2))
+
+#sSecond hidden layer
+classifier.add(Dense(units = 6, kernel_initializer = 'uniform', activation = 'relu',))
+
+
+#Output layer
+classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
+
+# Compiling the Neural Network
+# Compiling the model
+sgd = optimizers.SGD(learning_rate = 0.1)
+classifier.compile(optimizer = sgd, loss = 'binary_crossentropy', metrics = ['accuracy'])
+  
+
+history = classifier.fit(X_train, y_train, batch_size = 1, epochs = 200)
+
+
+%%Problem 2
+
+
+%%part a
+from matplotlib import pyplot
+
+from matplotlib.image import imread
+
+# characterize area of dataset
+
+envelope = 'train/'
+
+for I in range(9):
+
+
+pyplot.subplot(330 + 1 + I)
+history = classifier.fit(X_train, y_train, batch_size = 1, epochs = 200)
+
+
+filename = envelope + 'bird.' + str(i) + '.jpg'
+
+
+picture = imread(filename)
+
+pyplot.imshow(image)
+
+
+pyplot.show()
+
+%% repeat for other images.
+
+%%part b
+%% same from code part a just add files from lecture
+
+
+
+%%part c
+from matplotlib import pyplot
+
+from matplotlib.image import imread
+
+%%kernel
+envelope = 'train/'
+
+
+for I in range(9):
+
+
+pyplot.subplot(330 + 1 + I)
+
+
+filename = envelope + 'frog.' + str(i) + '.jpg'
+
+
+picture = imread(filename)
+
+
+pyplot.imshow(image)
+
+
+pyplot.show()
+
+
+from matplotlib import pyplot
+
+from matplotlib.image import imread
+
+
+envelope = 'train/'
+
+
+for I in range(9):
+
+
+pyplot.subplot(330 + 1 + I)
+
+
+
+filename = organizer + 'horse.' + str(i) + '.jpg'
+
+
+picture = imread(filename)
+
+
+pyplot.imshow(image)
+
+# show the figure
+
+pyplot.show()
+
+
+
+from matplotlib import pyplot
+
+from matplotlib.image import imread
+
+organizer = 'train/'
+
+for I in range(9):
+
+
+pyplot.subplot(335 + 1 + I)
+
+# characterize filename
+
+filename = organizer + 'ship.' + str(i) + '.jpg'
+
+
+picture = imread(filename)
+
+pyplot.imshow(image)
+
+pyplot.show()
+
+
+from matplotlib import pyplot
+
+from matplotlib.image import imread
+
+
+organizer = 'train/'
+
+
+for I in range(9):
+
+
+pyplot.subplot(330 + 1 + I)
+
+
+filename = envelope + 'truck.' + str(i) + '.jpg'
+
+
+picture = imread(filename)
+
+
+pyplot.imshow(image)
+
+
+pyplot.show()
